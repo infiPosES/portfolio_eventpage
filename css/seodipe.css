@@ -1,0 +1,1023 @@
+@charset "UTF-8";
+/* reset */
+* {
+  margin: 0px;
+  padding: 0px; }
+
+li {
+  list-style-type: none; }
+
+/* color */
+/* border */
+/* font */
+/* 각 섹션별 타이틀 */
+/* 관람안내 섹션 박스 내 타이틀 */
+html, body {
+  width: 100%;
+  height: 100%;
+  color: #2a2a2a;
+  background-color: #FAE6E6;
+  scroll-behavior: smooth; }
+
+/*포트폴리오 알림*/
+.alertPortfolio {
+  position: absolute;
+  top: 0px;
+  left: 30%;
+  z-index: 20;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  width: 40%;
+  height: 80px;
+  line-height: 80px;
+  background-color: #FBC90A;
+  text-align: center;
+  font-size: 22px;
+  font-family: "Jua", sans-serif;
+  font-weight: bold;
+  letter-spacing: 1; }
+  .alertPortfolio i {
+    margin-left: 10px;
+    color: purple;
+    cursor: pointer; }
+    .alertPortfolio i:hover {
+      color: white; }
+
+/*header*/
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 80px;
+  border: 0px solid lightgray;
+  box-sizing: border-box;
+  /* 메뉴 */ }
+  .header .gnb {
+    width: 100%;
+    height: 100%;
+    border: 0px solid pink;
+    box-sizing: border-box; }
+    .header .gnb ul {
+      width: 100%;
+      height: 100%; }
+      .header .gnb ul .gnbMenu {
+        width: 120px;
+        height: 100%;
+        float: left;
+        line-height: 81px;
+        text-align: center;
+        color: #FAE6E6;
+        font-size: 25px;
+        cursor: pointer;
+        transition: all linear 0.1s;
+        font-family: "Jua", sans-serif;
+        font-weight: normal;
+        letter-spacing: 1px;
+        border: 0px solid blue;
+        box-sizing: border-box; }
+        .header .gnb ul .gnbMenu:hover {
+          color: #FBC90A; }
+      .header .gnb ul .eTitle:hover {
+        color: #FAE6E6; }
+      .header .gnb ul .eLogo {
+        width: 80px;
+        margin-left: 2.5%;
+        background-image: url("../img/logo2.png");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 100% 100%; }
+      .header .gnb ul .eTitle {
+        width: 260px;
+        margin-right: calc(95% - 1120px); }
+        .header .gnb ul .eTitle h1 {
+          color: #FAE6E6;
+          font-size: 40px;
+          font-family: "Jua", sans-serif;
+          font-weight: normal;
+          letter-spacing: 2px; }
+      .header .gnb ul .eAddress::after {
+        clear: both; }
+      .header .gnb ul .quickBooth {
+        position: relative;
+        top: 15px;
+        left: 0px;
+        width: 300px;
+        height: 50px;
+        line-height: 50px;
+        background-color: white;
+        border-radius: 40px;
+        color: #FBC90A;
+        border: 2px solid #FBC90A;
+        box-sizing: border-box; }
+        .header .gnb ul .quickBooth label {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 20%;
+          height: 100%;
+          text-align: center;
+          border: 0px solid yellow;
+          box-sizing: border-box; }
+        .header .gnb ul .quickBooth .qFindBooth {
+          position: absolute;
+          top: 0px;
+          left: 15%;
+          width: 60%;
+          height: 100%;
+          outline: none;
+          text-indent: 10px;
+          font-size: 16px;
+          font-family: "Noto Sans KR", sans-serif;
+          font-weight: normal;
+          letter-spacing: 1;
+          border: 0px solid green;
+          box-sizing: border-box; }
+        .header .gnb ul .quickBooth .closeTable {
+          display: none;
+          position: absolute;
+          top: 0px;
+          left: 80%;
+          width: 20%;
+          line-height: 48px;
+          height: 100%;
+          text-align: center;
+          border: 0px solid lightblue;
+          box-sizing: border-box; }
+        .header .gnb ul .quickBooth .qBoothTable {
+          display: none;
+          position: absolute;
+          top: 70px;
+          width: 100%;
+          line-height: 30px;
+          font-size: 14px;
+          font-family: "Noto Sans KR", sans-serif;
+          font-weight: normal;
+          letter-spacing: 1;
+          border: 1px solid #FBC90A;
+          box-sizing: border-box;
+          color: #2a2a2a; }
+          .header .gnb ul .quickBooth .qBoothTable .qTable {
+            width: 100%;
+            background-color: white; }
+            .header .gnb ul .quickBooth .qBoothTable .qTable th {
+              background-color: #FBC90A;
+              cursor: default; }
+            .header .gnb ul .quickBooth .qBoothTable .qTable tr {
+              border: 1px solid #FBC90A;
+              box-sizing: border-box; }
+            .header .gnb ul .quickBooth .qBoothTable .qTable .boothName {
+              width: 70%; }
+            .header .gnb ul .quickBooth .qBoothTable .qTable .boothPosition {
+              width: 30%; }
+          .header .gnb ul .quickBooth .qBoothTable .closeTable {
+            padding-right: 10px;
+            width: 100%;
+            height: 25px;
+            border: 0px solid green;
+            box-sizing: border-box; }
+
+/* 메인창 */
+.sectionMain {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/bg1.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100%;
+  border: 1px solid transparent;
+  box-sizing: border-box; }
+  .sectionMain ul {
+    margin-top: 280px;
+    margin-left: calc(50% - 350px);
+    width: 700px;
+    height: 400px;
+    border: 0px solid green;
+    box-sizing: border-box; }
+    .sectionMain ul li {
+      width: 100%;
+      height: 200px;
+      transform: rotate(-9.5deg);
+      text-indent: 25px;
+      font-size: 130px;
+      font-family: "Pacifico", cursive;
+      font-weight: bold;
+      letter-spacing: 2;
+      border: 0px solid blue;
+      box-sizing: border-box; }
+    .sectionMain ul .choco {
+      color: #3D1B00;
+      animation: opa 1s linear; }
+@keyframes opa {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+    .sectionMain ul .strawberry {
+      color: #F3222A;
+      animation: titleUp 1.5s linear; }
+@keyframes titleUp {
+  0% {
+    margin-top: -250px;
+    opacity: 0; }
+  100% {
+    margin-top: 0px;
+    opacity: 1; } }
+/* 전시 소개 */
+.sectionIntro {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  /*전시소개 캐릭터*/
+  /*버튼 클릭 시  나오는 소개 내용창*/ }
+  .sectionIntro article {
+    float: left;
+    border: 0px solid lightgray;
+    box-sizing: border-box; }
+  .sectionIntro .artCharacter {
+    width: 30%;
+    height: 600px;
+    margin-left: 20%;
+    background-image: url("../img/character.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 0px solid lightgray;
+    box-sizing: border-box;
+    animation: topDown 2s infinite linear; }
+@keyframes topDown {
+  0% {
+    margin-top: -10px; }
+  50% {
+    margin-top: 0px; }
+  100% {
+    margin-top: -10px; } }
+  .sectionIntro .secTitle {
+    margin-left: 50px;
+    width: 150px;
+    height: 200px;
+    text-align: center;
+    background-image: url(../img/label.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #F3222A;
+    font-size: 30px;
+    border: 0px solid green;
+    box-sizing: border-box;
+    font-family: "Jua", sans-serif;
+    font-weight: normal;
+    letter-spacing: 1px; }
+    .sectionIntro .secTitle span {
+      display: inline-block;
+      margin-top: 90px;
+      width: 150px;
+      height: 45px;
+      border: 0px solid green;
+      box-sizing: border-box; }
+  .sectionIntro .artIntro {
+    padding: 50px;
+    width: 30%;
+    height: 600px;
+    border: 0px solid lightgray;
+    box-sizing: border-box;
+    /*전시소개 버튼*/ }
+    .sectionIntro .artIntro .introSub {
+      height: 40px;
+      line-height: 40px;
+      text-align: left;
+      text-indent: 15px;
+      font-size: 30px;
+      border: 0px solid lightgray;
+      box-sizing: border-box;
+      font-family: "Jua", sans-serif;
+      font-weight: bold;
+      letter-spacing: 1; }
+    .sectionIntro .artIntro .introTitle {
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      font-size: 80px;
+      color: #e9625f;
+      border: 0px solid lightgray;
+      box-sizing: border-box;
+      font-family: "Jua", sans-serif;
+      font-weight: normal;
+      letter-spacing: 2; }
+    .sectionIntro .artIntro .introSubTitle {
+      width: 100%;
+      height: 50px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      font-size: 30px;
+      font-family: "Jua", sans-serif;
+      font-weight: bold;
+      letter-spacing: 1; }
+      .sectionIntro .artIntro .introSubTitle span {
+        color: #e9625f; }
+    .sectionIntro .artIntro .introText {
+      width: 100%;
+      height: 200px;
+      font-size: 20px;
+      font-family: "Noto Sans KR", sans-serif;
+      font-weight: bold;
+      letter-spacing: 1; }
+    .sectionIntro .artIntro button {
+      width: 180px;
+      height: 50px;
+      font-size: 20px;
+      color: #e9625f;
+      background-color: white;
+      outline: 0px;
+      border-radius: 30px;
+      font-family: "Jua", sans-serif;
+      font-weight: bold;
+      letter-spacing: 1;
+      border: 1px solid #e9625f;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: all linear 0.2s; }
+    .sectionIntro .artIntro button:hover {
+      background-color: #FAE6E6; }
+    .sectionIntro .artIntro .seogumpeInfo {
+      margin-left: 25px; }
+  .sectionIntro .btnInfo {
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    width: 30%;
+    height: 400px;
+    padding: 50px;
+    border-radius: 50px;
+    background-color: #FAE6E6;
+    visibility: hidden;
+    /* 창닫기 버튼 */
+    /* 내용창의 제목 */
+    /* 내용창의 소제목 */
+    /*내용창 내용*/ }
+    .sectionIntro .btnInfo .closeDes {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      margin-top: -25px;
+      margin-left: calc(100% - 15px);
+      border: 0px solid green;
+      box-sizing: border-box;
+      cursor: pointer; }
+      .sectionIntro .btnInfo .closeDes i {
+        transition: all linear 0.1s; }
+    .sectionIntro .btnInfo .closeDes:hover i {
+      color: #F3222A; }
+    .sectionIntro .btnInfo .desTitle {
+      height: 60px;
+      margin-top: -30px;
+      margin-bottom: 15px;
+      font-size: 40px;
+      color: #F3222A;
+      border: 0px solid green;
+      box-sizing: border-box;
+      font-family: "Jua", sans-serif;
+      font-weight: bold;
+      letter-spacing: 2; }
+    .sectionIntro .btnInfo .desSubTitle {
+      height: 110px;
+      font-size: 25px;
+      border: 0px solid green;
+      box-sizing: border-box;
+      font-family: "Jua", sans-serif;
+      font-weight: normal;
+      letter-spacing: 1; }
+    .sectionIntro .btnInfo .desDescription {
+      margin-top: 10px;
+      font-size: 18px;
+      border: 0px solid green;
+      box-sizing: border-box;
+      font-family: "Noto Sans KR", sans-serif;
+      font-weight: bold;
+      letter-spacing: 1; }
+  .sectionIntro .artIntro::after {
+    clear: both; }
+
+/* 관람안내 */
+.sectionInfo {
+  width: 100%;
+  border: 0px solid transparent;
+  box-sizing: border-box;
+  /*마스크 착용 안내*/
+  /*서울디지털페어 입장시간 안내*/
+  /*유의사항*/
+  /*안전관련 협조요청사항*/ }
+  .sectionInfo .secTitle {
+    margin-left: 50px;
+    width: 150px;
+    height: 200px;
+    text-align: center;
+    background-image: url(../img/label.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #F3222A;
+    font-size: 30px;
+    border: 0px solid green;
+    box-sizing: border-box;
+    font-family: "Jua", sans-serif;
+    font-weight: normal;
+    letter-spacing: 1px; }
+    .sectionInfo .secTitle span {
+      display: inline-block;
+      margin-top: 90px;
+      width: 150px;
+      height: 45px;
+      border: 0px solid green;
+      box-sizing: border-box; }
+  .sectionInfo .infoCorona {
+    width: 70%;
+    height: 300px;
+    margin-left: 15%;
+    border: 0px solid lightgray;
+    box-sizing: border-box; }
+    .sectionInfo .infoCorona .maskImg {
+      width: 300px;
+      height: 300px;
+      margin-right: 5%;
+      background-image: url("../img/mask.png");
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      border: 0px solid lightgray;
+      box-sizing: border-box;
+      float: left; }
+    .sectionInfo .infoCorona .maskInfoBox {
+      width: calc(95% - 300px);
+      height: 100%;
+      float: right;
+      border: 0px solid lightgray;
+      box-sizing: border-box; }
+      .sectionInfo .infoCorona .maskInfoBox .infoBoxTitle {
+        display: inline-block;
+        width: 100%;
+        font-size: 50px;
+        color: #e9625f;
+        font-family: "Jua", sans-serif;
+        font-weight: normal;
+        letter-spacing: 2; }
+      .sectionInfo .infoCorona .maskInfoBox .maskText {
+        width: 100%;
+        height: 100%;
+        line-height: 32px;
+        margin-top: 20px;
+        font-size: 20px;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: normal;
+        letter-spacing: 1; }
+      .sectionInfo .infoCorona .maskInfoBox .maskInfoBox::after {
+        clear: both; }
+  .sectionInfo .infoTable {
+    width: 70%;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 15%;
+    border: 0px solid lightgray;
+    box-sizing: border-box; }
+    .sectionInfo .infoTable .infoBoxTitle {
+      width: 300px;
+      height: 100%;
+      float: left;
+      border: 0px solid lightgray;
+      box-sizing: border-box;
+      display: inline-block;
+      width: 100%;
+      font-size: 50px;
+      color: #e9625f;
+      font-family: "Jua", sans-serif;
+      font-weight: normal;
+      letter-spacing: 2; }
+      .sectionInfo .infoTable .infoBoxTitle i {
+        color: #F3222A;
+        animation: updown 1.5s linear infinite; }
+@keyframes updown {
+  0% {
+    margin-top: 0px; }
+  50% {
+    margin-top: 10px; }
+  100% {
+    margin-top: 0px; } }
+    .sectionInfo .infoTable table {
+      width: calc(95% - 300px);
+      height: 100%;
+      margin-top: -398px;
+      float: right;
+      text-align: center;
+      font-size: 20px;
+      font-family: "Noto Sans KR", sans-serif;
+      font-weight: normal;
+      letter-spacing: 1; }
+      .sectionInfo .infoTable table tr {
+        width: 100%; }
+      .sectionInfo .infoTable table th {
+        background-color: #e9625f;
+        color: white; }
+      .sectionInfo .infoTable table td {
+        background-color: white; }
+      .sectionInfo .infoTable table .infoBreak {
+        border-right: 2px solid #FAE6E6; }
+      .sectionInfo .infoTable table .infoDate {
+        width: 20%; }
+      .sectionInfo .infoTable table .infoDiv {
+        width: 20%; }
+      .sectionInfo .infoTable table .infoPrice {
+        width: 25%; }
+      .sectionInfo .infoTable table .infoTime {
+        width: 35%; }
+    .sectionInfo .infoTable table::after {
+      clear: both; }
+  .sectionInfo .infoCaution {
+    width: 70%;
+    height: 200px;
+    margin-top: 100px;
+    margin-left: 15%;
+    border: 0px solid lightgray;
+    box-sizing: border-box; }
+    .sectionInfo .infoCaution .infoBoxTitle {
+      width: 300px;
+      height: 100%;
+      float: left;
+      display: inline-block;
+      width: 100%;
+      font-size: 50px;
+      color: #e9625f;
+      font-family: "Jua", sans-serif;
+      font-weight: normal;
+      letter-spacing: 2; }
+    .sectionInfo .infoCaution .infoCautionText {
+      width: calc(95% - 300px);
+      margin-top: -198px;
+      float: right;
+      line-height: 32px;
+      font-size: 20px;
+      font-family: "Noto Sans KR", sans-serif;
+      font-weight: normal;
+      letter-spacing: 1;
+      border: 0px solid lightgray;
+      box-sizing: border-box; }
+      .sectionInfo .infoCaution .infoCautionText li::before {
+        font-size: 20px; }
+      .sectionInfo .infoCaution .infoCautionText li:nth-child(1)::before {
+        content: "\2780"; }
+      .sectionInfo .infoCaution .infoCautionText li:nth-child(2)::before {
+        content: "\2781"; }
+      .sectionInfo .infoCaution .infoCautionText li:nth-child(3)::before {
+        content: "\2782"; }
+      .sectionInfo .infoCaution .infoCautionText li:nth-child(4)::before {
+        content: "\2783"; }
+      .sectionInfo .infoCaution .infoCautionText li:nth-child(5)::before {
+        content: "\2784"; }
+      .sectionInfo .infoCaution .infoCautionText li:nth-child(6)::before {
+        content: "\2785"; }
+    .sectionInfo .infoCaution .infoCautionText::after {
+      clear: both; }
+  .sectionInfo .infoCooperation {
+    width: 70%;
+    height: 450px;
+    margin-top: 100px;
+    margin-left: 15%;
+    margin-bottom: 50px;
+    border: 0px solid lightgray;
+    box-sizing: border-box; }
+    .sectionInfo .infoCooperation .infoBoxTitle {
+      display: inline-block;
+      width: 100%;
+      font-size: 50px;
+      color: #e9625f;
+      font-family: "Jua", sans-serif;
+      font-weight: normal;
+      letter-spacing: 2;
+      width: 100%;
+      height: 70px;
+      line-height: 50px;
+      border: 0px solid lightgray;
+      box-sizing: border-box; }
+      .sectionInfo .infoCooperation .infoBoxTitle span {
+        font-size: 100px;
+        color: #F3222A; }
+      .sectionInfo .infoCooperation .infoBoxTitle span::after {
+        clear: both; }
+    .sectionInfo .infoCooperation .infoCooperlationBox {
+      width: 100%;
+      height: 380px;
+      font-size: 25px;
+      padding-top: 30px;
+      font-family: "Noto Sans KR", sans-serif;
+      font-weight: normal;
+      letter-spacing: 1;
+      border: 0px solid lightgray;
+      box-sizing: border-box; }
+      .sectionInfo .infoCooperation .infoCooperlationBox li {
+        width: 95%;
+        margin-left: 2.5%;
+        font-size: 20px; }
+        .sectionInfo .infoCooperation .infoCooperlationBox li span {
+          font-size: 25px;
+          color: #e9625f;
+          font-family: "Noto Sans KR", sans-serif;
+          font-weight: bold;
+          letter-spacing: 1; }
+        .sectionInfo .infoCooperation .infoCooperlationBox li p {
+          width: 97%;
+          margin-left: 1.5%;
+          text-indent: 5px; }
+      .sectionInfo .infoCooperation .infoCooperlationBox li::before {
+        font-size: 25px;
+        color: #e9625f; }
+      .sectionInfo .infoCooperation .infoCooperlationBox li:nth-child(1)::before {
+        content: "\2780"; }
+      .sectionInfo .infoCooperation .infoCooperlationBox li:nth-child(2)::before {
+        content: "\2781"; }
+      .sectionInfo .infoCooperation .infoCooperlationBox li:nth-child(3)::before {
+        content: "\2782"; }
+      .sectionInfo .infoCooperation .infoCooperlationBox li:nth-child(4)::before {
+        content: "\2783"; }
+
+/* 전시 일정 */
+.sectionDate {
+  width: 100%;
+  background-color: white;
+  border: 0px solid green;
+  box-sizing: border-box;
+  /* 안내표 */ }
+  .sectionDate .secTitle {
+    margin-left: 50px;
+    width: 150px;
+    height: 200px;
+    text-align: center;
+    background-image: url(../img/label.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #F3222A;
+    font-size: 30px;
+    border: 0px solid green;
+    box-sizing: border-box;
+    font-family: "Jua", sans-serif;
+    font-weight: normal;
+    letter-spacing: 1px; }
+    .sectionDate .secTitle span {
+      display: inline-block;
+      margin-top: 90px;
+      width: 150px;
+      height: 45px;
+      border: 0px solid green;
+      box-sizing: border-box; }
+  .sectionDate .dateBox {
+    margin-left: 10%;
+    width: 80%;
+    border: 0px solid blue;
+    box-sizing: border-box;
+    /* 표 시작 */ }
+    .sectionDate .dateBox h3 {
+      width: 100%;
+      height: 70px;
+      font-size: 50px;
+      line-height: 70px;
+      text-indent: 10%;
+      color: #e9625f;
+      font-family: "Jua", sans-serif;
+      font-weight: normal;
+      letter-spacing: 2;
+      border: 0px solid blue;
+      box-sizing: border-box; }
+    .sectionDate .dateBox .dateGuide {
+      margin-top: 30px;
+      margin-left: 10%;
+      width: 80%;
+      height: 500px;
+      font-size: 20px;
+      border: 0px solid blue;
+      box-sizing: border-box; }
+      .sectionDate .dateBox .dateGuide li {
+        border: 0px solid green;
+        box-sizing: border-box;
+        height: 100px; }
+        .sectionDate .dateBox .dateGuide li p {
+          font-family: "Noto Sans KR", sans-serif;
+          font-weight: normal;
+          letter-spacing: 1;
+          border: 0px solid red;
+          box-sizing: border-box; }
+        .sectionDate .dateBox .dateGuide li .guideT {
+          float: left;
+          width: 20%;
+          font-size: 25px;
+          font-family: "Jua", sans-serif;
+          font-weight: normal;
+          letter-spacing: 1;
+          color: #e9625f; }
+        .sectionDate .dateBox .dateGuide li .guideC {
+          float: right;
+          width: 80%;
+          margin-top: -35px;
+          /* 오시는길, 주차 자세히보기 */ }
+          .sectionDate .dateBox .dateGuide li .guideC span {
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            border-bottom: 1px solid #2a2a2a; }
+            .sectionDate .dateBox .dateGuide li .guideC span:hover {
+              color: #e9625f;
+              border-bottom: 1px solid #e9625f; }
+        .sectionDate .dateBox .dateGuide li p:last-child {
+          clear: both; }
+      .sectionDate .dateBox .dateGuide li:first-child {
+        height: 60px; }
+    .sectionDate .dateBox .guideMap {
+      width: 80%;
+      height: 1400px;
+      margin-left: 10%;
+      position: relative;
+      top: 0px;
+      left: 0px;
+      border: 0px solid gray;
+      box-sizing: border-box; }
+      .sectionDate .dateBox .guideMap button {
+        width: 120px;
+        height: 40px;
+        line-height: 40px;
+        outline: none;
+        border: none;
+        border-radius: 30px;
+        color: #e9625f;
+        font-size: 20px;
+        background-color: white;
+        font-family: "Jua", sans-serif;
+        font-weight: normal;
+        letter-spacing: 1;
+        border: 1px solid #e9625f;
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: all linear 0.2s; }
+        .sectionDate .dateBox .guideMap button:hover {
+          background-color: #FAE6E6; }
+        .sectionDate .dateBox .guideMap button.button1floor {
+          background-color: #FAE6E6; }
+        .sectionDate .dateBox .guideMap button.button2floor {
+          margin-left: 10px; }
+      .sectionDate .dateBox .guideMap .mapImg {
+        position: absolute;
+        top: 40px;
+        left: 0px;
+        width: 100%;
+        height: 550px;
+        background-position: 50% 50%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border: 0px solid blue;
+        box-sizing: border-box; }
+        .sectionDate .dateBox .guideMap .mapImg li {
+          position: absolute;
+          border: 0px solid green;
+          box-sizing: border-box;
+          cursor: pointer; }
+      .sectionDate .dateBox .guideMap .mapImg1 {
+        background-image: url("../img/1floor.jpg");
+        visibility: visible; }
+      .sectionDate .dateBox .guideMap .mapImg2 {
+        background-image: url("../img/2floor.jpg");
+        visibility: hidden; }
+      .sectionDate .dateBox .guideMap .findBooth {
+        margin-top: 550px;
+        width: 100%;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: normal;
+        letter-spacing: 1;
+        border: 0px solid red;
+        box-sizing: border-box; }
+        .sectionDate .dateBox .guideMap .findBooth li {
+          width: 95%;
+          margin-top: 10px;
+          margin-left: 2.5%; }
+        .sectionDate .dateBox .guideMap .findBooth .findBoothTitle {
+          height: 50px;
+          line-height: 50px;
+          font-size: 30px;
+          color: #e9625f;
+          border: 0px solid gray;
+          box-sizing: border-box;
+          font-family: "Jua", sans-serif;
+          font-weight: normal;
+          letter-spacing: 1; }
+        .sectionDate .dateBox .guideMap .findBooth .findBoothInput {
+          position: relative;
+          top: 0px;
+          left: 0px;
+          width: 95%;
+          border-radius: 30px;
+          height: 60px;
+          border: 3px solid #e9625f;
+          box-sizing: border-box; }
+          .sectionDate .dateBox .guideMap .findBooth .findBoothInput label {
+            display: inline-block;
+            margin-top: 2px;
+            margin-left: 2%;
+            margin-right: 1%;
+            width: 5%;
+            height: 52px;
+            line-height: 59px;
+            text-align: center;
+            border: 0px solid red;
+            box-sizing: border-box; }
+          .sectionDate .dateBox .guideMap .findBooth .findBoothInput input {
+            position: absolute;
+            top: 0px;
+            left: 8%;
+            display: inline-block;
+            width: 90%;
+            height: 54px;
+            font-size: 20px;
+            text-indent: 10px;
+            outline: none;
+            border: none;
+            font-family: "Noto Sans KR", sans-serif;
+            font-weight: normal;
+            letter-spacing: 1; }
+        .sectionDate .dateBox .guideMap .findBooth .findBoothTable {
+          display: none;
+          width: 80%;
+          height: 600px;
+          overflow: hidden;
+          margin-left: 10%;
+          font-size: 20px;
+          text-align: center; }
+          .sectionDate .dateBox .guideMap .findBooth .findBoothTable table {
+            width: 100%;
+            text-indent: 10px;
+            cursor: pointer;
+            border: 1px solid pink;
+            box-sizing: border-box; }
+            .sectionDate .dateBox .guideMap .findBooth .findBoothTable table tr {
+              height: 50px;
+              line-height: 50px; }
+            .sectionDate .dateBox .guideMap .findBooth .findBoothTable table th {
+              background-color: #FAE6E6;
+              cursor: default; }
+            .sectionDate .dateBox .guideMap .findBooth .findBoothTable table .boothName {
+              width: 40%; }
+            .sectionDate .dateBox .guideMap .findBooth .findBoothTable table .boothPosition {
+              width: 60%; }
+
+/* 오시는길 */
+.sectionAddress .secTitle {
+  margin-left: 50px;
+  width: 150px;
+  height: 200px;
+  text-align: center;
+  background-image: url(../img/label.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #F3222A;
+  font-size: 30px;
+  border: 0px solid green;
+  box-sizing: border-box;
+  font-family: "Jua", sans-serif;
+  font-weight: normal;
+  letter-spacing: 1px; }
+  .sectionAddress .secTitle span {
+    display: inline-block;
+    margin-top: 90px;
+    width: 150px;
+    height: 45px;
+    border: 0px solid green;
+    box-sizing: border-box; }
+.sectionAddress .addressMap {
+  width: 70%;
+  margin-left: 15%;
+  border: 0px solid blue;
+  box-sizing: border-box; }
+  .sectionAddress .addressMap iframe {
+    width: 100%;
+    height: 600px; }
+  .sectionAddress .addressMap h3 {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 20px; }
+  .sectionAddress .addressMap .parking {
+    margin-left: 20%;
+    margin-bottom: 100px;
+    width: 60%;
+    height: 300px;
+    font-size: 20px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: normal;
+    letter-spacing: 1;
+    border: 0px solid gray;
+    box-sizing: border-box; }
+    .sectionAddress .addressMap .parking th {
+      width: 100%;
+      height: 40px;
+      color: white;
+      background-color: #e9625f;
+      border: 0px solid gray;
+      box-sizing: border-box; }
+    .sectionAddress .addressMap .parking td {
+      height: 40px;
+      font-size: 20px;
+      background-color: white; }
+    .sectionAddress .addressMap .parking .parkT {
+      width: 15%;
+      text-align: center;
+      border: 0px solid gray;
+      box-sizing: border-box; }
+    .sectionAddress .addressMap .parking .parkD {
+      width: 85%;
+      text-indent: 10px;
+      border: 0px solid gray;
+      box-sizing: border-box; }
+
+/* footer */
+footer {
+  width: 100%;
+  height: 250px;
+  background-color: #e9625f;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: normal;
+  letter-spacing: 1; }
+  footer .footer {
+    width: 70%;
+    margin-left: 15%;
+    color: white;
+    border: 0px solid gray;
+    box-sizing: border-box; }
+    footer .footer .subFooter {
+      width: 33.3%;
+      float: left;
+      border: 0px solid gray;
+      box-sizing: border-box; }
+      footer .footer .subFooter ul {
+        width: 88%;
+        margin-left: 6%;
+        border: 0px solid blue;
+        box-sizing: border-box; }
+      footer .footer .subFooter.footerG .footerMenu {
+        height: 30px;
+        text-align: center; }
+        footer .footer .subFooter.footerG .footerMenu li {
+          width: 25%;
+          float: left; }
+        footer .footer .subFooter.footerG .footerMenu li:last-child {
+          width: 50%; }
+        footer .footer .subFooter.footerG .footerMenuli:last-child::after {
+          clear: both; }
+      footer .footer .subFooter.footerG .sns {
+        margin-top: 50px;
+        width: 50%;
+        height: 50px;
+        margin-left: 10%;
+        border: 0px solid green;
+        box-sizing: border-box; }
+        footer .footer .subFooter.footerG .sns li {
+          width: 33.3%;
+          height: 100%;
+          float: left; }
+        footer .footer .subFooter.footerG .snsli:last-child::after {
+          clear: both; }
+      footer .footer .subFooter .footerTitle {
+        margin-top: 20px;
+        font-size: 18px; }
+      footer .footer .subFooter.footerQ .portfolioInfo {
+        display: inline-block;
+        width: 88%;
+        margin-top: 10px;
+        margin-left: 6%;
+        font-size: 18px;
+        border: 0px solid green;
+        box-sizing: border-box; }
+      footer .footer .subFooter.footerQ::after {
+        clear: both; }
+
+.backtotop {
+  opacity: 0;
+  position: fixed;
+  top: 800px;
+  left: 93%;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #e9625f;
+  color: white;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer; }
+  .backtotop i {
+    display: inline-block;
+    line-height: 65px; }
+  .backtotop:hover {
+    color: #FBC90A; }
+
+/*# sourceMappingURL=seodipe.css.map */

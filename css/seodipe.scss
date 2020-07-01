@@ -1,0 +1,1003 @@
+@charset "utf-8";
+/* reset */
+* {margin: 0px; padding: 0px; }
+li{
+	list-style-type: none;
+}
+
+/* color */
+$pink: #e9625f;
+$red : #F3222A;
+$brown: #3D1B00;
+$lightPink: #FAE6E6;
+$black: #2a2a2a;
+$yellow: #FBC90A;
+
+/* border */
+@mixin setBorder($size, $color) {
+	border: $size+px solid $color;
+	box-sizing: border-box;
+}
+
+/* font */
+$koTitleFont: 'Jua', sans-serif;
+$enTitleFont: 'Pacifico', cursive;
+$koContentFont: 'Noto Sans KR', sans-serif;
+$titleSize: 40px;
+$subTitleSize: 30px;
+@mixin setFont($family,$weight, $spacing) {
+	font: {
+		family: $family;
+		weight: $weight;
+	}
+	letter-spacing: $spacing;
+}
+/* 각 섹션별 타이틀 */
+@mixin setSecTitle{
+	margin-left: 50px;
+	width: 150px;
+	height:200px;
+	text-align: center;
+	background: {
+		image: url(../img/label.png);
+		position: 50% 50%;
+		size: cover;
+		repeat: no-repeat;
+	}
+	color: $red;
+	font-size: $subTitleSize;
+	@include setBorder(0, green);
+	@include setFont($koTitleFont, normal, 1px);
+	& span {
+		display: inline-block;
+		margin-top: 90px;
+		width: 150px;
+		height: 45px;
+		@include setBorder(0, green);
+	}
+}
+/* 관람안내 섹션 박스 내 타이틀 */
+@mixin infoBoxTitle {
+	display: inline-block;
+	width: 100%;
+	font-size: 50px;
+	color: $pink;
+	@include setFont($koTitleFont, normal, 2);
+}
+html, body{
+	width: 100%;
+	height: 100%;
+	color: $black;
+	background-color: $lightPink;
+	scroll-behavior: smooth;
+}
+/*포트폴리오 알림*/
+.alertPortfolio {
+	position: absolute;
+	top: 0px;
+	left: 30%;
+	z-index: 20;
+	border-bottom-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	width: 40%;
+	height: 80px;
+	line-height: 80px;
+	background-color: $yellow;
+	text-align: center;
+	font-size: 22px;
+	@include setFont($koTitleFont, bold,1);
+	& i {
+		margin-left: 10px;
+		color: purple;
+		cursor: pointer;
+		&:hover {
+			color: white;
+		}
+	}
+}
+/*header*/
+.header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+	width: 100%;
+	height: 80px;
+	@include setBorder(0, lightgray);
+	/* 메뉴 */
+	& .gnb {
+		width: 100%;
+		height: 100%;
+		@include setBorder(0, pink);	
+		& ul {
+			width: 100%;
+			height: 100%;
+			& .gnbMenu {
+				width: 120px;
+				height: 100%;
+				float: left;
+				line-height: 81px;
+				text-align: center;
+				color: $lightPink;
+				font-size: 25px;
+				cursor: pointer;
+				transition: all linear 0.1s;
+				@include setFont($koTitleFont, normal, 1px);
+				@include setBorder(0, blue);
+				&:hover {color: $yellow;}
+			}
+			& .eTitle:hover {color: $lightPink;}
+			& .eLogo {
+				width: 80px;
+				margin-left: 2.5%;
+				background: {
+					image: url("../img/logo2.png");
+					repeat: no-repeat;
+					position: 50% 50%;
+					size:100% 100%;
+				}
+			}
+			& .eTitle {
+				width: 260px;
+				& h1 {
+					color: $lightPink;
+					font-size: $titleSize;
+					@include setFont($koTitleFont, normal, 2px);
+				}
+				margin-right: calc(95% - 1120px);
+			}
+			& .eAddress::after {
+				clear: both;
+			}
+			& .quickBooth {
+				position: relative;
+				top: 15px;
+				left: 0px;
+				width: 300px;
+				height: 50px;
+				line-height: 50px;
+				background-color: white;
+				border-radius: 40px;
+				color: $yellow;
+				@include setBorder(2, $yellow);
+				& label {
+					position: absolute;
+					top: 0px;
+					left: 0px;
+					width: 20%;
+					height: 100%;
+					text-align: center;
+					@include setBorder(0, yellow);
+				}
+				& .qFindBooth {
+					position: absolute;
+					top: 0px;
+					left: 15%;
+					width: 60%;
+					height: 100%;
+					outline: none;
+					text-indent: 10px;
+					font-size: 16px;
+					@include setFont($koContentFont, normal, 1);
+					@include setBorder(0, green);
+				}
+				& .closeTable {
+					display: none;
+					position: absolute;
+					top: 0px;
+					left: 80%;	
+					width: 20%;
+					line-height: 48px;
+					height: 100%;
+					text-align: center;
+					@include setBorder(0, lightblue);
+				}
+				& .qBoothTable {
+					display: none;
+					position: absolute;
+					top: 70px;
+					width: 100%;
+					line-height: 30px;
+					font-size: 14px;
+					@include setFont($koContentFont, normal, 1);
+					@include setBorder(1, $yellow);
+					color: $black;
+					& .qTable {
+						width: 100%;
+						background-color: white;
+						& th {
+							background-color: $yellow;
+							cursor: default;
+						}
+						& tr {
+							@include setBorder(1, $yellow);
+						}
+						& .boothName {width: 70%}
+						& .boothPosition {width: 30%;}
+					}
+					& .closeTable {
+						padding-right: 10px;
+						width: 100%;
+						height: 25px;
+						@include setBorder(0, green);
+					}
+				}
+			}
+		}
+	}
+}
+/* 메인창 */
+.sectionMain {
+	width: 100%;
+	height: 100%;
+	background: {
+		image: url("../img/bg1.jpg");
+		repeat: no-repeat;
+		position: 50% 50%;
+		size: 100%;
+	}
+	& ul {
+		margin: {
+			top: 280px;
+			left: calc(50% - 350px);
+		}
+		width: 700px;
+		height: 400px;
+		@include setBorder(0, green);
+		& li {
+			width: 100%;
+			height: 200px;
+			transform: rotate(-9.5deg);
+			text-indent: 25px;	
+			font-size: 130px;
+			@include setFont($enTitleFont, bold, 2);
+			@include setBorder(0, blue);
+		}
+		& .choco {
+			color: $brown;
+			animation: opa 1s linear;
+		}
+		@keyframes opa {
+			0% {opacity:0;}
+			100% {opacity: 1;}
+		}
+		& .strawberry {
+			color: $red;
+			animation: titleUp 1.5s linear;
+		}
+		@keyframes titleUp {
+			0% {margin-top: -250px; opacity: 0;}
+			100% {margin-top: 0px; opacity: 1;}
+		}
+	}
+	@include setBorder(1, transparent);
+}
+/* 전시 소개 */
+.sectionIntro {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	& article {
+		float: left;
+		@include setBorder(0, lightgray);
+	}
+	/*전시소개 캐릭터*/
+	& .artCharacter {
+		width: 30%;
+		height: 600px;
+		margin-left: 20%;
+		background: {
+			image: url('../img/character.png');
+			position: 50% 50%;
+			repeat: no-repeat;
+			size: 100%;
+		}
+		@include setBorder(0, lightgray);
+		animation: topDown 2s infinite linear;
+		@keyframes topDown {
+			0% {margin-top: -10px;}
+			50% {margin-top: 0px;}
+			100% {margin-top: -10px;}
+		}	
+	}
+	& .secTitle {
+		@include setSecTitle;
+	}
+	& .artIntro {
+		padding: 50px;
+		width: 30%;
+		height: 600px;
+		@include setBorder(0, lightgray);
+		& .introSub {
+			height: 40px;
+			line-height: 40px;
+			text-align: left;
+			text-indent: 15px;
+			font-size: $subTitleSize;
+			@include setBorder(0, lightgray);
+			@include setFont($koTitleFont, bold, 1);
+		}
+		& .introTitle {
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+			font-size: 80px;
+			color: $pink;
+			@include setBorder(0, lightgray);
+			@include setFont($koTitleFont, normal, 2);
+		}
+		& .introSubTitle {
+			width: 100%;
+			height: 50px;
+			margin: {
+				top: 30px;
+				bottom: 30px;
+			}
+			font-size: $subTitleSize;
+			@include setFont($koTitleFont, bold, 1);
+			& span {
+				color: $pink;
+			}
+		}
+		& .introText {
+			width: 100%;
+			height: 200px;
+			font-size: 20px;
+			@include setFont($koContentFont, bold, 1);
+		}
+		/*전시소개 버튼*/
+		& button {
+			width: 180px;
+			height: 50px;
+			font-size: 20px;
+			color: $pink;
+			background-color: white;
+			outline: 0px;
+			border-radius: 30px;	
+			@include setFont($koTitleFont, bold, 1);
+			@include setBorder(1, $pink);
+			cursor: pointer;
+			transition: all linear 0.2s;
+		}
+		& button:hover {
+			background-color: $lightPink;
+			}
+		& .seogumpeInfo {
+			margin-left: 25px;
+		}
+	}	
+	/*버튼 클릭 시  나오는 소개 내용창*/
+	& .btnInfo {
+		position: absolute;
+		top: 230px;
+		left: 50%;
+		width: 30%;
+		height: 400px;
+		padding: 50px;
+		border-radius: 50px;
+		background-color: $lightPink;
+		visibility: hidden;
+		/* 창닫기 버튼 */
+		& .closeDes {
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			margin: {
+				top: -25px;
+				left: calc(100% - 15px);
+			}
+			@include setBorder(0, green);
+			cursor: pointer;
+			& i {
+				transition: all linear 0.1s;
+			}
+		}
+		& .closeDes:hover i{
+			color: $red;
+		}
+		/* 내용창의 제목 */
+		& .desTitle {
+			height: 60px;
+			margin-top: -30px;
+			margin-bottom: 15px;
+			font-size: 40px;
+			color: $red;
+			@include setBorder(0, green);
+			@include setFont($koTitleFont, bold, 2);
+		}
+		/* 내용창의 소제목 */
+		& .desSubTitle {
+			height: 110px;	
+			font-size: 25px;
+			@include setBorder(0, green);
+			@include setFont($koTitleFont, normal, 1);
+		}
+		/*내용창 내용*/
+		& .desDescription {
+			margin-top: 10px;	
+			font-size: 18px;
+			@include setBorder(0, green);
+			@include setFont($koContentFont, bold, 1);
+		}
+	}
+	& .artIntro::after {clear:both;}
+}
+/* 관람안내 */
+.sectionInfo {
+	width: 100%;
+	@include setBorder(0, transparent);
+	& .secTitle {
+		@include setSecTitle;
+	}
+	/*마스크 착용 안내*/
+	& .infoCorona{
+		width: 70%;
+		height: 300px;
+		margin-left: 15%;
+		@include setBorder(0, lightgray);
+		& .maskImg {
+			width: 300px;
+			height: 300px;
+			margin-right: 5%;
+			background: {
+				image: url('../img/mask.png');
+				position: 50% 50%;
+				repeat: no-repeat;
+				size: 100% 100%;
+			}
+			@include setBorder(0, lightgray);
+			float: left;
+		}
+		& .maskInfoBox {
+			width: calc(95% - 300px);
+			height: 100%;
+			float: right;
+			@include setBorder(0, lightgray);
+			& .infoBoxTitle {
+				@include infoBoxTitle;
+			}
+			& .maskText {
+				width: 100%;
+				height: 100%;
+				line-height: 32px;
+				margin-top: 20px;
+				font-size: 20px;
+				@include setFont($koContentFont, normal, 1);
+			}
+			& .maskInfoBox::after {clear: both;}
+		}
+	}
+	/*서울디지털페어 입장시간 안내*/
+	& .infoTable {
+		width: 70%;
+		height: 400px;
+		margin: {
+			top: 50px;
+			left: 15%;
+		}
+		@include setBorder(0, lightgray);
+		& .infoBoxTitle {
+			width: 300px;
+			height: 100%;
+			float: left;
+			@include setBorder(0, lightgray);
+			@include infoBoxTitle;
+			& i {
+				color: $red;
+				animation: updown 1.5s linear infinite;
+			}
+			@keyframes updown {
+				0% {margin-top: 0px;}
+				50% {margin-top: 10px;}
+				100% {margin-top: 0px;}
+			}
+		}
+		& table {
+			width: calc(95% - 300px);
+			height: 100%;
+			margin-top: -398px;
+			float: right;
+			text-align: center;
+			font-size: 20px;
+			@include setFont($koContentFont, normal, 1);
+			& tr {
+				width: 100%;
+			}
+			& th {
+				background-color: $pink;
+				color: white;
+			}
+			& td {
+				background-color: white;
+			}
+			& .infoBreak {
+				border-right: 2px solid $lightPink;
+			}
+			& .infoDate {
+				width: 20%; 
+			}
+			& .infoDiv {
+				width: 20%;
+			}
+			& .infoPrice {
+				width: 25%;
+			}
+			& .infoTime {
+				width: 35%;
+			}
+		}
+		& table::after { clear: both; }
+	}
+	/*유의사항*/
+	& .infoCaution {
+		width: 70%;
+		height: 200px;
+		margin: {
+			top: 100px;
+			left: 15%;
+		}
+		@include setBorder(0, lightgray);
+		& .infoBoxTitle {
+			width: 300px;
+			height: 100%;
+			float: left;
+			@include infoBoxTitle;
+		}
+		& .infoCautionText {
+			width: calc(95% - 300px);
+			margin-top: -198px;
+			float: right;
+			line-height: 32px;
+			font-size: 20px;
+			@include setFont($koContentFont, normal, 1);
+			@include setBorder(0, lightgray);
+			& li::before {font-size: 20px;}
+			& li:nth-child(1)::before {
+				content: "\2780";
+			}
+			& li:nth-child(2)::before {
+				content: "\2781";
+			}
+			& li:nth-child(3)::before {
+				content: "\2782";
+			}
+			& li:nth-child(4)::before {
+				content: "\2783";
+			}
+			& li:nth-child(5)::before {
+				content: "\2784";
+			}
+			& li:nth-child(6)::before {
+				content: "\2785";
+			}
+			
+		}
+		& .infoCautionText::after { clear: both; }
+	}
+	/*안전관련 협조요청사항*/
+	& .infoCooperation {
+		width: 70%;
+		height: 450px;
+		margin: {
+			top: 100px;
+			left: 15%;
+			bottom: 50px;
+		}
+		@include setBorder(0, lightgray);
+		& .infoBoxTitle {
+			@include infoBoxTitle;
+			width: 100%;
+			height: 70px;
+			line-height: 50px;
+			@include setBorder(0, lightgray);
+			& span {
+				font-size: 100px;
+				color: $red;
+			}
+			& span::after {clear: both;}
+		}
+		& .infoCooperlationBox {
+			width: 100%;
+			height: 380px;
+			font-size: 25px;
+			padding-top: 30px;
+			@include setFont($koContentFont, normal, 1);
+			@include setBorder(0, lightgray);
+			& li {
+				width: 95%;
+				margin-left: 2.5%;
+				font-size: 20px;
+				& span {
+					font-size: 25px;
+					color: $pink;
+					@include setFont($koContentFont, bold, 1);
+				}
+
+				& p {
+					width: 97%;
+					margin-left: 1.5%;
+					text-indent: 5px;
+				}
+			}
+			& li::before {
+				font-size: 25px;
+				color: $pink;
+			}
+			& li:nth-child(1)::before {
+				content: "\2780";
+			}
+			& li:nth-child(2)::before {
+				content: "\2781";
+			}
+			& li:nth-child(3)::before {
+				content: "\2782";
+			}
+			& li:nth-child(4)::before {
+				content: "\2783";
+			}
+		}
+	}
+}
+
+/* 전시 일정 */
+.sectionDate {
+	width: 100%;
+	background-color: white;
+	@include setBorder(0, green);
+	& .secTitle {
+		@include setSecTitle;
+	}
+	/* 안내표 */
+	& .dateBox {
+		margin-left: 10%;
+		width: 80%;
+		@include setBorder(0, blue);
+		& h3 {
+			width: 100%;
+			height: 70px;
+			font-size: 50px;
+			line-height: 70px;
+			text-indent: 10%;
+			color: $pink;
+			@include setFont($koTitleFont, normal, 2);
+			@include setBorder(0, blue);
+		}
+		/* 표 시작 */
+		& .dateGuide {
+			margin: {
+				top: 30px;
+				left: 10%;
+			}
+			width: 80%;
+			height: 500px;
+			font-size: 20px;
+			@include setBorder(0, blue);
+			& li {	
+				@include setBorder(0, green);
+				height: 100px;
+				& p {
+					@include setFont($koContentFont, normal, 1);
+					@include setBorder(0, red);
+				}
+				& .guideT {
+					float: left;
+					width: 20%;
+					font-size: 25px;
+					@include setFont($koTitleFont, normal, 1);
+					color: $pink;
+				}
+				& .guideC {
+					float: right;
+					width: 80%;
+					margin-top: -35px;
+					/* 오시는길, 주차 자세히보기 */
+					& span {
+						font: {
+							weight: bold;
+							size: 16px;
+						}
+						cursor: pointer;
+						border-bottom: 1px solid $black;
+						&:hover {
+							color: $pink;
+							border-bottom: 1px solid $pink;
+						}
+					}
+				}
+				& p:last-child {clear: both;}
+			}
+			& li:first-child{height: 60px;}
+		}
+		& .guideMap {
+			width: 80%;
+			height: 1400px;
+			margin-left: 10%;
+			position: relative;
+			top: 0px;
+			left: 0px;
+			@include setBorder(0, gray);
+			& button {
+				width: 120px;
+				height: 40px;
+				line-height: 40px;
+				outline: none;
+				border: none;
+				border-radius: 30px;
+				color: $pink;
+				font-size: 20px;
+				background-color: white;
+				@include setFont($koTitleFont, normal, 1);
+				@include setBorder(1, $pink);
+				cursor: pointer;
+				transition: all linear 0.2s;
+				&:hover {
+					background-color: $lightPink;
+				}
+				&.button1floor {
+					background-color: $lightPink;
+				}
+				&.button2floor {
+					margin-left: 10px;
+				}
+			}
+			& .mapImg {
+				position: absolute;
+				top: 40px;
+				left: 0px;
+				width: 100%;
+				height: 550px;
+				background: {
+					position: 50% 50%;
+					size: 100%;
+					repeat: no-repeat;
+				}
+				@include setBorder(0, blue);
+				& li {
+					position: absolute;
+					@include setBorder(0, green);
+					cursor: pointer;
+				}
+			}
+			& .mapImg1 {
+				background-image: url('../img/1floor.jpg');
+				visibility: visible;			
+			}
+			& .mapImg2 {
+				background-image: url('../img/2floor.jpg');
+				visibility: hidden;
+			}
+			& .findBooth {
+				margin-top: 550px;
+				width: 100%;
+				@include setFont($koContentFont, normal, 1);
+				@include setBorder(0, red);
+				& li {
+					width: 95%;
+					margin:{
+						top: 10px;
+						left:2.5%;
+					}
+				}
+				& .findBoothTitle {
+					height: 50px;
+					line-height: 50px;
+					font-size: 30px;
+					color: $pink;
+					@include setBorder(0, gray);
+					@include setFont($koTitleFont, normal, 1);
+					
+				}
+				& .findBoothInput {
+					position: relative;
+					top: 0px;
+					left: 0px;
+					width: 95%;
+					border-radius: 30px;
+					height: 60px;
+					@include setBorder(3, $pink);
+					& label {
+						display: inline-block;
+						margin: {
+							top: 2px;
+							left: 2%;
+							right: 1%;
+						}
+						width: 5%;
+						height: 52px;
+						line-height: 59px;
+						text-align:center;
+						@include setBorder(0, red);
+					}
+					& input {
+						position: absolute;
+						top: 0px;
+						left: 8%;
+						display: inline-block;
+						width: 90%;
+						height: 54px;
+						font-size: 20px;
+						text-indent: 10px;
+						outline: none;
+						border: none;
+						@include setFont($koContentFont, normal, 1);
+					}
+				}
+				& .findBoothTable {
+					display: none;
+					width: 80%;
+					height: 600px;
+					overflow: hidden;
+					margin-left: 10%;
+					font-size: 20px;
+					text-align: center;
+					& table {
+						width: 100%;
+						text-indent: 10px;
+						cursor: pointer;
+						@include setBorder(1, pink);
+						& tr {
+							height: 50px;
+							line-height: 50px;
+						}
+						& th {
+						background-color: $lightPink;
+						cursor: default;
+						}
+						& .boothName {
+							width: 40%;
+						}
+						& .boothPosition {
+							width: 60%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* 오시는길 */
+.sectionAddress {
+	& .secTitle {
+		@include setSecTitle;
+	}
+	& .addressMap {
+		width: 70%;
+		margin-left: 15%;
+		@include setBorder(0, blue);
+		& iframe {
+			width: 100%;
+			height: 600px;
+		}
+		& h3 {
+			width: 100%;
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+			font-size: 20px;
+		}
+		& .parking {
+			margin: {
+				left: 20%;
+				bottom: 100px;
+			}
+			width: 60%;
+			height: 300px;
+			font-size: 20px;
+			@include setFont($koContentFont, normal, 1);
+			@include setBorder(0, gray);
+			& th {
+				width: 100%;
+				height: 40px;
+				color: white;
+				background-color: $pink;
+				@include setBorder(0, gray);
+			}
+			& td {
+				height: 40px;
+				font-size: 20px;
+				background-color: white;
+			}
+			& .parkT {
+				width: 15%;
+				text-align: center;
+				@include setBorder(0, gray);
+			}
+			& .parkD {
+				width: 85%;
+				text-indent: 10px;
+				@include setBorder(0, gray);
+			}
+		}
+	}
+}
+/* footer */
+footer {
+	width: 100%;
+	height: 250px;
+	background-color: $pink;
+	@include setFont($koContentFont, normal ,1);
+	& .footer {
+		width: 70%;
+		margin-left: 15%;
+		color: white;
+		@include setBorder(0, gray);
+		& .subFooter {
+			width: 33.3%;
+			float: left;
+			@include setBorder(0, gray);
+			& ul {
+				width: 88%;
+				margin-left: 6%;
+				@include setBorder(0, blue);
+			}
+			&.footerG {
+				& .footerMenu {
+					height: 30px;
+					text-align: center;
+					& li {
+						width: 25%;
+						float: left;
+					}	
+					& li:last-child {width: 50%;}
+					&li:last-child::after {clear: both;}
+				}
+				& .sns {
+					margin-top: 50px;
+					width: 50%;
+					height: 50px;
+					margin-left: 10%;
+					@include setBorder(0, green);
+					& li {
+						width: 33.3%;
+						height: 100%;
+						float: left;
+					}
+					&li:last-child::after {clear: both;}
+				}
+			}
+			& .footerTitle {
+				margin-top: 20px;
+				font-size: 18px;
+			}
+			&.footerQ {
+				& .portfolioInfo {
+					display: inline-block;
+					width: 88%;
+					margin: {
+						top: 10px;
+						left: 6%;
+					}
+					font-size: 18px;
+					@include setBorder(0, green);
+				}
+			}
+			&.footerQ::after {clear: both;}
+		}
+	}
+}
+//맨 위로 버튼
+.backtotop {
+	opacity: 0;
+	position: fixed;
+	top: 800px;
+	left: 93%;
+	width: 65px;
+	height: 65px;
+	border-radius: 50%;
+	background-color: $pink;
+	color: white;
+	text-align: center;
+	transition: all 0.3s;
+	cursor: pointer;
+	& i {
+		display: inline-block;
+		line-height: 65px;
+	}
+	&:hover {
+		color: $yellow;
+	}
+}
